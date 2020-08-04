@@ -1,0 +1,27 @@
+<%- include('header.ejs') -%>
+  <body>
+    <div class="box" id="heading">
+        <h1> <%= workplace %> </h1>
+    </div>
+
+
+    <div class="box">
+      <% newcontent.forEach(function(contents){ %>
+    <form class="" action="/delete" method="post">
+
+          <div class="item">
+            <input type="checkbox" name="checkbox" value="<%= contents._id %>" onchange="this.form.submit()">
+              <p> <%= contents.work %> </p>
+          </div>
+          <input type="hidden" name="list" value=<%= workplace %> ></input>
+        </form>
+      <%  }) %>
+
+
+
+    <form class="item" action="/" method="post">
+      <input type="text" name="Addnewitem" type="hidden" placeholder="New Item"><br><br>
+      <button type="submit" id="button" name="list" value= <%= workplace%> >+</button>
+    </form>
+  </div>
+<%- include('footer.ejs') -%>
